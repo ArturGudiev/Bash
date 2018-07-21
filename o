@@ -1,0 +1,11 @@
+#!/bin/bash
+
+case "$1" in
+	"s")
+		vim ~/Programming/Shell/$2 ;;
+	
+	"")
+		echo no arguments ;;
+
+esac 
+

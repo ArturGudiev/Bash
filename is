@@ -1,0 +1,6 @@
+#!/bin/bash
+STR="$@"
+# echo $STR
+mod=${STR//[ ]/+}
+# echo $mod
+ch https://www.google.ru/search?q=$mod
