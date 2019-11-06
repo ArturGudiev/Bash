@@ -2,5 +2,5 @@ if [ "$1" == "a" ]; then
 	echo yes
 fi
 if [ "$1" == "c" ]; then 
-	echo pwd
+	ec $(pwd)
 fi

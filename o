@@ -6,6 +6,8 @@ case "$1" in
 	
 	"")
 		echo no arguments ;;
+	"p")
+		code ~/.profile ;;
 
 esac 
 
