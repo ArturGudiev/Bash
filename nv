@@ -1,0 +1,11 @@
+#!/bin/bash
+
+declare -A pathes=( 
+["home"]="/home/donny" 
+["src"]="/home/donny/Sizer" 
+["woof"]="dog")
+
+
+ccd ${pathes[$1]}
+ec `$(pwd)`
+echo 123
