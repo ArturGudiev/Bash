@@ -9,8 +9,4 @@ case "$1" in
 esac
 exec bash
 
-#if [ "$1" == "sh" ]; then
-#   cd ~/Programming/Shell
-#else cd ~/Programming
-#fi
 

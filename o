@@ -2,7 +2,7 @@
 
 case "$1" in
 	"s")
-		vim ~/Programming/Shell/$2 ;;
+		code ~/Programming/Shell/$2 ;;
 	
 	"")
 		echo no arguments ;;
