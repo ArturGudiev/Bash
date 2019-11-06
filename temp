@@ -1,0 +1,8 @@
+#!/bin/bash
+
+declare -a arr=("element1" "element2" "element3")
+
+if [[ " ${arr[@]} " =~ " ${element1} " ]]; then
+    # whatever you want to do when arr contains value
+    echo yes
+fi

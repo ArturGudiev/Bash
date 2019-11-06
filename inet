@@ -1,0 +1,9 @@
+#!/bin/bash
+
+declare -A URLs=( 
+["gogle"]="https://google.com" 
+["src"]="/home/donny/Sizer" 
+["woof"]="dog")
+
+
+fx ${URLs[$1]}

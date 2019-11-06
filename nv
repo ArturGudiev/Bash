@@ -8,4 +8,3 @@ declare -A pathes=(
 
 ccd ${pathes[$1]}
 ec `$(pwd)`
-echo 123

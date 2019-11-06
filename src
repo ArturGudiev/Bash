@@ -1,3 +1,49 @@
 #!/bin/bash
 
-ccd /home/donny/Sizer
+if [ "$1" == "" ]; then 
+    ccd /home/donny/Sizer
+    # nv src
+fi
+
+if [ "$1" == "1" ]; then 
+    ccd /home/donny/Sizer/model-filtering-service/
+fi
+
+if [ "$1" == "2" ]; then 
+    ccd /home/donny/Sizer/model-sorting-service/
+fi
+
+if [ "$1" == "3" ]; then 
+    ccd /home/donny/Sizer/racalcclient-v2
+fi
+
+if [ "$1" == "4" ]; then 
+    ccd /home/donny/Sizer/reliability-availability-service
+fi
+
+if [ "$1" == "5" ]; then 
+    ccd /home/donny/Sizer/single-model-sizer-service/
+fi
+
+if [ "$1" == "6" ]; then 
+    ccd /home/donny/Sizer/sio-sizer-chassis-data-loader/
+fi
+
+if [ "$1" == "7" ]; then 
+    ccd /home/donny/Sizer/sio-sizer-tools-client/
+fi
+
+if [ "$1" == "8" ]; then 
+    ccd /home/donny/Sizer/siosizer-data-loader/
+fi
+
+if [ "$1" == "9" ]; then 
+    ccd /home/donny/Sizer/sizer-controller/
+fi
+
+if [ "$1" == "10" ]; then 
+    ccd /home/donny/Sizer/sizing-process-manager/
+fi
+
+# if [ "$1" == "1" ]; then ccd /home/donny/Sizer/model-filtering-service/
+# fi

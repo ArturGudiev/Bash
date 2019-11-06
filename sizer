@@ -1,0 +1,12 @@
+#!/bin/bash
+# if [ "$1" -eq "help" ] then
+#     echo help
+# fi
+
+if [ "$1" == "help" ]; then 
+	ccd /home/donny/Sizer/Help
+fi
+
+if [ "$1" == "deploy" ]; then 
+	code /home/donny/Sizer/Help/deploy_steps.txt
+fi

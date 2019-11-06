@@ -3,11 +3,9 @@
 case "$1" in
 	"s")
 		code ~/Programming/Shell/$2 ;;
-	
 	"")
 		echo no arguments ;;
-	"p")
+	"p"|"profile")
 		code ~/.profile ;;
-
 esac 
 
