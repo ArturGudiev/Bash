@@ -1,2 +1,2 @@
 #!/bin/bash
-code ~/Programming/Shell/$1
+code ~/Programming/Bash/$1

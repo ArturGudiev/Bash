@@ -3,7 +3,8 @@
 declare -A URLs=( 
 ["gogle"]="https://google.com" 
 ["src"]="/home/donny/Sizer" 
+["70"]="http://localhost:7070" 
 ["woof"]="dog")
 
 
-fx ${URLs[$1]}
+ch ${URLs[$1]}

@@ -1,4 +1,4 @@
 #!/bin/bash
-cp ~/Programming/Shell/template ~/Programming/Shell/$1
+cp ~/Programming/Bash/template ~/Programming/Bash/$1
 
-o s $1
+q $1

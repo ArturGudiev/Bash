@@ -4,9 +4,10 @@ case "$1" in
 		cd ~/Programming ;;
 	
 	"sh")
-		cd ~/Programming/Shell ;;
+		cd ~/Programming/Bash ;;
 
 esac
+l
 exec bash
 
 
