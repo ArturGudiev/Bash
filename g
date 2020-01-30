@@ -5,6 +5,14 @@ case "$1" in
         ;;
 	"")
 		echo no arguments ;;
-	"p"|"profile")
-		code ~/.profile ;;
+	"b")
+		git branch -r ;;
+	"f")
+		git fetch --all ;;
+	"hard"|"h")
+		git reset --hard origin/master ;;
+	"s"|"status")
+		git status ;;
+	"p"|"pull")
+		git pull ;;
 esac 

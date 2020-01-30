@@ -1,0 +1,13 @@
+#!/bin/bash
+case "$1" in 
+	"down")
+		cd /home/sio/Downloads/ ;;
+	
+	"sh")
+		cd ~/Programming/Bash ;;
+
+esac
+l
+exec bash
+
+
