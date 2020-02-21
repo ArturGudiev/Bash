@@ -1,3 +1,3 @@
 #!/bin/bash
 filepath=`pwd`
-clip $filepath"/$1"
+ec $filepath"/$1"

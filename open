@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case "$1" in
+	"s")
+		gnome-control-center &;;
+	"rc")
+		code ~/.bashrc &;;
+	"")
+		echo no arguments ;;
+	"p"|"profile")
+		code ~/.profile ;;
+	# /home/sio/Programming/Bash
+	"i"|"input")
+		code ~/.inputrc ;;	
+esac 
+

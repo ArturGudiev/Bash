@@ -9,3 +9,4 @@ else
     echo "$PASSED is not valid"
     exit 1
 fi
+l

@@ -1,13 +1,34 @@
 #!/bin/bash
+
 case "$1" in 
 	"down")
-		cd /home/sio/Downloads/ ;;
-	
+		LOC=/home/sio/Downloads/ ;;
+	"tasks")
+		LOC=/home/sio/Artur/Tasks/ ;;	
+	"art")
+		LOC=/home/sio/Artur/ ;;
+	"temp")
+		# c /home/sio/Artur/Temp/ ;;
+		LOC=/home/sio/Artur/Temp/ ;;
 	"sh")
-		cd ~/Programming/Bash ;;
-
+		LOC=~/Programming/Bash ;;
+	"s9"|"gui"|"ui")
+		LOC=/home/sio/ScaleIO_Sizer/sio-sizer-tools-client/ ;;
+	"s9p"|"guip"|"uip")
+		LOC=/home/sio/ScaleIO_Sizer/sio-sizer-tools-client/public ;;
+	"desktop")
+		LOC=/home/sio/Desktop/ ;;
+	"scr"|"scripts")
+		# echo "here"
+		LOC=/home/sio/Desktop/Sizer/ ;;
 esac
-l
+
+if [ "$2" == "-i" ]; then 
+        gio open $LOC
+	else
+		c $LOC
+		l
+fi
 exec bash
 
 

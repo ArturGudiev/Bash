@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "a" ]; then 
-	echo yes
-fi
-if [ "$1" == "c" ]; then 
-	ec $(pwd)/$2
-fi
+case "$1" in 
+	"applist")
+		wmctrl -l ;;
+esac

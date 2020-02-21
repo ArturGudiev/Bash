@@ -1,0 +1,32 @@
+#!/bin/bash
+
+case "$1" in 
+	"chere"|"copyhere"|"ch"|"here")
+        LOC=`pwd`
+        cp /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/public/build/ $LOC -r
+        sleep 1 
+        cp /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/bld/ $LOC -r
+        l 
+        ;;
+	"cfhere"|"copyfromhere")
+        LOC=`pwd`
+        rm -r /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/public/build/*
+        cp $PWD/* /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/public/build/ $LOC -r
+        # l 
+        ;;
+	"c"|"copy")
+		cp /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/bld/ $2
+        cp /home/sio/ScaleIO_Sizer/sio-sizer-tools-client/public/build/ $2
+        l $2
+        ;;
+	"dir")
+		c /home/sio/Artur/Tasks/3_JSON/;;
+	"wait"|"wgui"|"waitgui")
+		timer 165;;
+	"bdir"|"bd")
+        c /home/sio/Artur/Tasks/3_JSON/builds/ ;;
+esac
+
+exec bash
+
+

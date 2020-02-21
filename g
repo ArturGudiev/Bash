@@ -15,4 +15,6 @@ case "$1" in
 		git status ;;
 	"p"|"pull")
 		git pull ;;
+	"m"|"master")
+		git checkout master ;;
 esac 

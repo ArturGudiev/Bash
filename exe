@@ -1,0 +1,9 @@
+#!/bin/bash
+case "$1" in 
+	"updaterc"|"urc"|"rc")
+		source ~/.bashrc ;;
+esac
+# l
+exec bash
+
+

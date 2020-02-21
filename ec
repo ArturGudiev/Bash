@@ -1,8 +1,3 @@
 #!/bin/bash
-
-printf '%s\n' \
-    ""   \
-    "               $1" ;
-echo ""
-cl $1
-
+echo -n "$@" | xclip -selection c
+printf '\n\t%s\n\n' $@

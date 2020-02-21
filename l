@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# pwd= `pwd`
-# echo "Directory: " + $pwd
-# A=$pwd
-# ec $A
-ec $(pwd)
-ls -l --color
+echo $#
+if (( $# > 0 ));
+then
+    ls -l $1 --color 
+else
+    ec $(pwd)
+    ls -l --color
+fi
 exec bash

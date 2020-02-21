@@ -1,0 +1,28 @@
+#!/bin/bash
+case "$1" in 
+	"1"|"install")
+		terminator -l sizer-install >& /dev/null & ;;
+	"2"|"compile")
+		terminator -l sizer-compile >& /dev/null &;;
+	"3"|"gui")
+		terminator -l sizer-build-gui >& /dev/null &;;
+	"4"|"comp")
+		terminator -l sizer-calc-compile-new >& /dev/null &;;
+	"4o"|"compo")
+		terminator -l sizer-calc-compile >& /dev/null &;;
+	"5"|"run")
+		terminator -l sizer-new-run >2& /dev/null;;
+	"5o"|"runo")
+		terminator -l sizer-run >& /dev/null &;;
+	"6"|"load")
+		terminator -l sizer-load >& /dev/null &;;
+	"7"|"deploy")
+		terminator -l sizer-deploy >& /dev/null &;;
+	"9"|"branch")
+		terminator -l sizer-git-branch >& /dev/null &;;
+	"10"|"calc-branch")
+		terminator -l sizer-calc-git-branch >& /dev/null &;;
+esac
+exec bash
+
+

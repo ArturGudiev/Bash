@@ -1,12 +1,36 @@
 #!/bin/bash
-# if [ "$1" -eq "help" ] then
-#     echo help
-# fi
+case "$1" in 
+	"bgui"|"buildgui")
+		gnome-terminal -e 'timer 165 && exit'
+		term gui;;
+	"run")
+		# term run 
+		# wmctrl -a sio@vm-gudiea
+		/usr/bin/terminator -l sizer-run-new >& /dev/null &
+		;;
+	"temp")
+		cd /home/sio/Artur/Temp/;;
+	"sh")
+		cd ~/Programming/Bash;;	
+	"scr")
+		cd ~/Sizer;;
+	"go2"|"url2")
+		inet 50;;
+	"go"|"url")
+		ch http://localhost:3001;;
+	"branch"|"br")
+		term branch;;
+	"clog"|"controller_log")
+		code /home/sio/ScaleIO_Sizer/sizer-controller.log;;
+	"mlog"|"manager_log")
+		code /home/sio/ScaleIO_Sizer/sizer-manager.log;;
+	"db"|"database"|"load")
+		term load;;
+	"ucon"|"update_controller")
+		cd /home/sio/ScaleIO_Sizer/sizer-controller/ ; tsc ; sizer run ;
+		sleep 3;
+		sizer url2
+esac
+exec bash
 
-if [ "$1" == "help" ]; then 
-	ccd /home/donny/Sizer/Help
-fi
 
-if [ "$1" == "deploy" ]; then 
-	code /home/donny/Sizer/Help/deploy_steps.txt
-fi
