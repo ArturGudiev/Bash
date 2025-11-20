@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/zsh
 echo -n "$@" | xclip -selection c

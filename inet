@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 declare -A URLs=( 
 ["gogle"]="https://google.com" 

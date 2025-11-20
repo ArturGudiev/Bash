@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 case "$1" in
 	"u"|"update")
         git -c core.quotepath=false -c log.showSignature=false fetch origin --progress --prune

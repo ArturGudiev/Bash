@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 case "$1" in 
 	"chere"|"copyhere"|"ch"|"here")
@@ -27,6 +27,6 @@ case "$1" in
         c /home/sio/Artur/Tasks/3_JSON/builds/ ;;
 esac
 
-exec bash
+exec zsh
 
 

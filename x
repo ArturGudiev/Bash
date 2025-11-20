@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/zsh
 filepath=`pwd`
 ec $filepath"/$1"

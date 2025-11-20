@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 case "$1" in 
-	"common")
-		code /home/sio/ScaleIO_Sizer/ ;;
+	"tpl")
+		code /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
 	
 	"calc")
 		idea /home/sio/ScaleIO_Sizer/reliability-availability-service-v2/ >& /dev/null & ;;
@@ -12,6 +12,6 @@ case "$1" in
 	"manager"|"sizing-process-manager")
 		idea /home/sio/ScaleIO_Sizer/sizing-process-manager/ >& /dev/null & ;;
 esac
-exec bash
+exec zsh
 
 

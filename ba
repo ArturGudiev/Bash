@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 p sh;
-exec bash
+exec zsh
 

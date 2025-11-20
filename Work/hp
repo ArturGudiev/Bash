@@ -2,6 +2,9 @@
 case "$1" in 
 	"dir")
 		cd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
+	
+	"dirb")
+		cd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
 
 	"sh")
 		cd ~/Programming/Bash ;;
@@ -11,10 +14,11 @@ case "$1" in
 
 	"pro")
         code "/Users/arturgudiev/Programming/Job/chp_online_mobile" ;;
-
 	
+	"hub")
+        br code "/Users/arturgudiev/Programming/Job/chp_online_mobile" ;;
 
 
 esac
-l
+
 # exec zsh

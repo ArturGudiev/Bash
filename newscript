@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/zsh
 cp ~/Programming/Bash/Scripts/template ~/Programming/Bash/$1
 # q $1

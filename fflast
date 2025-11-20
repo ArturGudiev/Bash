@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 app=$1
 workspace=$(wmctrl -d | grep '\*' | cut -d ' ' -f1)

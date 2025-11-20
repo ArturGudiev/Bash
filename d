@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # $PASSED=`realpath $1`
 
 if [[ -d `realpath $1` ]]; then

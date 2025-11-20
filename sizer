@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 case "$1" in 
 	"bgui"|"buildgui")
 		gnome-terminal -e 'timer 165 && exit'
@@ -31,6 +31,6 @@ case "$1" in
 		sleep 3;
 		sizer url2
 esac
-exec bash
+exec zsh
 
 

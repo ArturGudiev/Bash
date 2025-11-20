@@ -1,5 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 cd ../
 l
-exec bash
-
+exec zsh

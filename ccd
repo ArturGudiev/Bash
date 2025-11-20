@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
 
 cd $1
-exec bash
+exec zsh
 

@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
-#!/bin/bash
+#!/bin/zsh
 case "$1" in 
 	"")
 		m /home/sio/ScaleIO_Sizer/ ;;
@@ -35,7 +35,7 @@ case "$1" in
 		m /home/sio/ScaleIO_Sizer/reliability-availability-service-v2/ ;;
 
 esac
-exec bash
+exec zsh
 
 # if [ "$1" == "" ]; then 
 #     ccd /home/donny/Sizer

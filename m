@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
 cd $1
 l
-exec bash
+exec zsh
 

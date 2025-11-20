@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # code $1 > /dev/null
 cd $1

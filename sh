@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 cd ~/Programming/Shell
 # p sh
-exec bash
+exec zsh

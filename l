@@ -11,4 +11,4 @@ else
     ls -lG
 fi
 echo ""
-# exec bash
+# exec zsh

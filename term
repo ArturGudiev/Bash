@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 case "$1" in 
 	"1"|"install")
 		terminator -l sizer-install >& /dev/null & ;;
@@ -23,6 +23,6 @@ case "$1" in
 	"10"|"calc-branch")
 		terminator -l sizer-calc-git-branch >& /dev/null &;;
 esac
-exec bash
+exec zsh
 
 
