@@ -1,0 +1,14 @@
+#!/bin/zsh
+case "$1" in 
+	"")
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js ;;
+	
+	"b"|"bootstrap")
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Bootstrap ;;
+
+    "pro")
+		code /Users/arturgudiev/Programming/NodeJS/templates-juggler ;;
+
+esac
+# exec zsh
+

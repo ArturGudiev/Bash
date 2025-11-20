@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/bin/zsh
 case "$1" in 
 	"")
-		cd ~/Programming ;;
+		mcd ~/Programming ;;
 	
 	"sh")
-		cd ~/Programming/Bash ;;
+		mcd ~/Programming/Bash ;;
 
 esac
 l
-exec bash
-
-
+# exec zsh

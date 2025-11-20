@@ -1,10 +1,26 @@
 #!/bin/bash
 
-declare -A pathes=( 
-["home"]="/home/donny" 
-["src"]="/home/donny/Sizer" 
-["woof"]="dog")
+# declare -A pathes=( 
+# ["home"]="/home/donny" 
+# ["src"]="/home/donny/Sizer" 
+# ["bash"]="/Users/arturgudiev/Programming/Bash/Scripts/Bash" 
+# ["woof"]="dog")
 
 
-ccd ${pathes[$1]}
-ec `$(pwd)`
+# ccd ${pathes[$1]}
+# ec `$(pwd)`
+
+
+#!/bin/zsh
+case "$1" in 
+	"bash")
+		cd /Users/arturgudiev/Programming/Bash/Scripts/Bash ;;
+	
+	# "sh")
+	# 	cd ~/Programming/Bash ;;
+
+esac
+l
+# exec zsh
+
+

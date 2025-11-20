@@ -1,3 +1,3 @@
-#!/bin/bash
-echo -n "$@" | xclip -selection c
+#!/bin/zsh
+echo -n "$@" | pbcopy
 printf '\n\t%s\n\n' $@

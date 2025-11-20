@@ -1,11 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo $#
-if (( $# > 0 ));
-then
-    ls -l $1 --color 
+if [[ "$1" == "-d" ]]; then
+    ec $(pwd)
+    ls -lG -d */
+elif (( $# > 0 )); then
+    ls -lG $1
 else
     ec $(pwd)
-    ls -l --color
+    ls -lG
 fi
-exec bash
+echo ""
+# exec bash

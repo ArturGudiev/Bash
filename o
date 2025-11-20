@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+# Default editor
+editor="code"
+
+# Check if -cursor flag is provided
+if [[ "$1" == "-cursor" ]]; then
+    editor="cursor"
+    shift  # Remove the -cursor flag from arguments
+fi
+
+case "$1" in
+    "s")
+        gnome-control-center &;;
+    "rc")
+        $editor ~/.bashrc &;;
+    "")
+        echo "no arguments" ;;
+    "p2"|"profile2")
+        $editor ~/.profile ;;
+    "p"|"profile")
+        $editor ~/.zprofile ;;
+    "p3"|"profile3")
+        $editor ~/.zshrc ;;
+    # /home/sio/Programming/Bash
+    "i"|"input")
+        $editor ~/.inputrc ;;	
+esac 
