@@ -2,7 +2,7 @@
 
 case "$1" in 
 	"job")
-		LOC=/home/sio/Programming/Job/ ;;
+		LOC=/Users/arturgudiev/Programming/Job/ ;;
 	"down")
 		LOC=/home/sio/Downloads/ ;;
 	"tasks")
@@ -25,12 +25,11 @@ case "$1" in
 		LOC=/home/sio/Desktop/Sizer/ ;;
 esac
 
-if [ "$2" == "-i" ]; then 
-        gio open $LOC
+if [[ "$2" == "-i" ]]; then 
+        echo 111
+		gio open $LOC
 	else
+		echo 222
 		c $LOC
-		l
 fi
 exec zsh
-
-

@@ -2,12 +2,12 @@
 
 echo $#
 if [[ "$1" == "-d" ]]; then
-    ec $(pwd)
+    printInCenter $(pwd)
     ls -lG -d */
 elif (( $# > 0 )); then
     ls -lG $1
 else
-    ec $(pwd)
+    printInCenter $(pwd)
     ls -lG
 fi
 echo ""

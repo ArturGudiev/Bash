@@ -3,6 +3,9 @@ case "$1" in
 	"tpl")
 		code /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
 	
+	"mobile")
+		code /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;;
+	
 	"calc")
 		idea /home/sio/ScaleIO_Sizer/reliability-availability-service-v2/ >& /dev/null & ;;
 	"ui"|"gui")
