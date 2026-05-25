@@ -2,11 +2,20 @@
 case "$1" in 
 	"fclean"|"fc")
 		flutter pub run build_runner clean ;;
-		# flutter run build_runner clean ;;
-		# dart run build_runner clean ;;
+
 	"fbuild"|"fb")
-		# dart run build_runner build --delete-conflicting-outputs ;;
 		flutter pub run build_runner build --delete-conflicting-outputs ;;
+
+	"color"|"col")
+		color=${2:-$(pbpaste)}
+		# echo "$color"
+		#remove # from first symbol 
+
+		if [[ $color == \#* ]]; then
+			pureColor="${color:1}"
+			ec "const Color(0xFF$pureColor)"
+		fi
+		;;
 
 esac
 

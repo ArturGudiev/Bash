@@ -1,6 +1,10 @@
 #!/bin/zsh
 # HP2 - Work-related navigation and commands for HP project
 
+hp_sql() {
+    psql -U postgres -d chpo -c "$1"; 
+}
+
 hp() {
   case "$1" in 
     "dir")
@@ -10,8 +14,8 @@ hp() {
       cd /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
 
     "dirf")
-      cd /Users/arturgudiev/Programming/Job/frontend/ ;;
-
+      cd /Users/arturgudiev/Programming/Job/frontend/CHPOnline/ ;;
+      
     "apk")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk ;;
       
@@ -27,9 +31,19 @@ hp() {
       cd /Users/arturgudiev/Programming/Job/frontend/CHPOnline/ ;
       npm run dev ;;
 
-    "android+")
+    "android+"|"android_build"|"abuild")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;
-      npm run dev ;;
+      flutter build apk ;;
+
+    "android_dir"|"a_dir")
+      cd /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk/ ;
+      ;;
+
+    "copy_android"|"cp_android")
+      cp /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk/app-release.apk $2 ;;
+
+    "cpapk")
+      cp /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk/app-release.apk $2 ;;
 
     "m+")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;
@@ -41,8 +55,18 @@ hp() {
     "swagger")
       open -a "Safari" 'http://localhost:8000/docs' ;;
 
+    "swaggerjson")
+      open -a "Safari" 'http://localhost:8000/openapi.json' ;;
+
     "hub")
       br "https://github.com/Kush013/CHPOnline#" ;;
+
+    "pr")
+      br "https://github.com/Kush013/chp_online_mobile/pulls" ;;
+
+    "pr2")
+      br "https://github.com/Kush013/CHPOnline/pulls" ;;
+
 
     "hub2")
       br "https://github.com/Kush013/chp_online_mobile" ;;
@@ -56,11 +80,52 @@ hp() {
     "gile")
       br https://ru.yougile.com/team/248e303b8e99/%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B9-%D0%BE%D0%BF%D0%B5%D1%80%D1%88%D1%82%D0%B0%D0%B1 ;;
     
-    "address")
-      ec ""Владикавказ ;;
+    "address"|"addr")
+      ec "Владикавказ ул Куйбышева 134 д 4 " ;;
+
+    "address2"|"addr2")
+      ec "Владикавказ ул Чапаева 17 " ;;
+    
+    "addr3")
+      ec "Владикавказ ул Московская д 17 " ;;
+
+    "move_to_icons"|"move_icons")
+      mv $2 /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons ;;
 
     "sql"|"db")
       psql -U postgres -d chpo ;;
+
+    "test1")
+      hp dir;
+      flutter test test/pages/login_page_test.dart;
+      ;;
+
+    "uibackc"|"uiback_cursor")
+      cursor  /Users/arturgudiev/Programming/Job/frontend/CHPOnline/ /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
   
+    "sqlfunctions"|"sqlf")
+      psql -U postgres  -d chpo -f /Users/arturgudiev/Programming/Job/SQL/chp.sql ;;
+
+    "sqlfc"|"psqlfc")
+      if [[ -n "$2" ]]; then
+        expression="$2"
+      else
+        read "?Get sql expression (function call): " expression
+      fi
+      [[ -n "$expression" ]] || { echo "hp sqlfc: expression required" >&2; return 1; }
+      psql -U postgres -d chpo -c "SELECT ($expression).*" ;;
+
+    "sqlfc2"|"psqlfc2")
+      if [[ -n "$2" ]]; then
+        expression="$2"
+      else
+        read "?Get sql expression (function call): " expression
+      fi
+      [[ -n "$expression" ]] || { echo "hp sqlfc: expression required" >&2; return 1; }
+      psql -U postgres -d chpo -c "SELECT $expression" ;;
+
+    *)
+      echo "hp: unknown command '$1'" >&2
+      return 1 ;;
   esac
 }

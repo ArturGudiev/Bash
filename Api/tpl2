@@ -2,12 +2,24 @@
 case "$1" in 
 	"")
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js ;;
+
+	"dir")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
 	
 	"b"|"bootstrap")
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Bootstrap ;;
 
     "pro")
 		code /Users/arturgudiev/Programming/NodeJS/templates-juggler ;;
+
+	"psql"|"postgres"|"postgresql")
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js PostgreSQL ;;
+
+
+	"flutter")
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Flutter ;;
+
+
 
 esac
 # exec zsh
