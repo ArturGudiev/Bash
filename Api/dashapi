@@ -1,0 +1,42 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/hp.sh"
+
+run_dash_query() {
+	psql -U postgres -d dashboard -c "$1"
+}
+
+run_dash_query_quite() {
+	psql -U postgres -d dashboard --no-pager -c "$1"
+}
+
+case "$1" in 
+	"states")
+		query="SELECT * FROM states;"
+ 		run_dash_query $query
+	;;
+
+	"inc")
+		query="SELECT * FROM incidents where id=$2;"
+ 		run_dash_query $query
+	;;
+
+	"user")
+		query="SELECT * FROM users where id=$2;"
+ 		run_dash_query $query
+	;;
+
+	"incmod+")
+		query="UPDATE incident_moderations set accepted=true where incident_id=$2;"
+ 		run_dash_query $query
+		
+
+		query="SELECT * FROM incident_moderations where incident_id=$2;"
+ 		run_dash_query $query
+	;;
+
+
+	"addr")
+ 		psql -U postgres -d chpo -c "SELECT id, value FROM addresses where id=$2;";;
+
+	
+esac

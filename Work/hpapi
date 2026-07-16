@@ -1,0 +1,78 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/hp.sh"
+
+run_chp_query() {
+	psql -U postgres -d chpo -c "$1"
+}
+
+run_chp_query_quite() {
+	psql -U postgres -d chpo --no-pager -c "$1"
+}
+
+case "$1" in 
+	"lusers")
+ 		[ -n "$2" ] && usersCount=$2 || usersCount=5
+		hp sqlfc "lusers($usersCount)";;
+
+	"duser")
+ 		if [ -n "$2" ]; then
+			hp sqlfc2 "delete_user($2)";
+		else
+			echo "Error: User ID is required"
+			exit 1
+		fi
+		;;
+
+	"lincidents"|"linc")
+		[ -n "$2" ] && incidentsCount=$2 || incidentsCount=5
+		query="
+		
+		SELECT 
+			i.id, i.name, i.user_id, i.description, i.address_id, i.created, a.value as "address"
+		FROM incidents i INNER JOIN addresses a 
+		ON i.address_id = a.id 
+		ORDER BY created DESC LIMIT $incidentsCount;
+		
+		"
+ 		run_chp_query $query
+		;;
+
+	"lincidentsf"|"lincf")
+		[ -n "$2" ] && incidentsCount=$2 || incidentsCount=5
+		query="SELECT * FROM incidents order by created DESC LIMIT $incidentsCount;"
+ 		run_chp_query $query
+	;;
+
+	"incmod")
+		query="SELECT * FROM incident_moderations where incident_id=$2;"
+ 		run_chp_query $query
+	;;
+
+	"inc")
+		query="SELECT * FROM incidents where id=$2;"
+ 		run_chp_query $query
+	;;
+
+	"user")
+		query="SELECT * FROM users where id=$2;"
+ 		run_chp_query $query
+	;;
+
+	"incmod+")
+		query="UPDATE incident_moderations set accepted=true and moderated_date='2026-06-16T21:30:00-07:00' where incident_id=$2;"
+ 		run_chp_query $query
+		
+
+		query="SELECT * FROM incident_moderations where incident_id=$2;"
+ 		run_chp_query $query
+	;;
+
+	"addr")
+ 		psql -U postgres -d chpo -c "SELECT id, value FROM addresses where id=$2;";;
+
+	"org_by_dep")
+ 		psql -U postgres -d chpo -c "SELECT * from organizations where id in (SELECT organization_id from departments where id=$2);"
+		;;
+
+	
+esac

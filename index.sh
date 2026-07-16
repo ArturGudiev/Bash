@@ -6,6 +6,7 @@ FUNCTIONS_DIR="$HOME/Programming/Bash/Scripts/functions"
 
 # Source individual function files
 source "$FUNCTIONS_DIR/hp.sh" # CHp Mobile 
+source "$FUNCTIONS_DIR/cao.sh" # CAO FastAPI
 source "$FUNCTIONS_DIR/dash.sh" # CHp Mobile 
 source "$FUNCTIONS_DIR/tpl.sh" # CHp Mobile 
 source "$FUNCTIONS_DIR/nav.sh"

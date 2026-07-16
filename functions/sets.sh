@@ -1,8 +1,8 @@
 #!/bin/zsh
 # HP2 - Work-related navigation and commands for HP project
 
-sets_frontend_dir="/Users/arturgudiev/Programming/Vue/sets-tracker-frontend/"
-sets_backend_dir="/Users/arturgudiev/Programming/Python/sets-tracker-backend/"
+sets_frontend_dir="/Users/arturgudiev/Programming/projects/SetsTracker/sets-tracker-frontend/"
+sets_backend_dir="/Users/arturgudiev/Programming/projects/SetsTracker/sets-tracker-backend/"
 age=25
 
 filename="${prefix}_final_report.txt"
@@ -15,6 +15,9 @@ sets() {
     "dirf")
       cd $sets_frontend_dir ;;
 
+    "dirb")
+      cd $sets_backend_dir ;;
+
     "f+")
       sets dirf; npm run dev  ;;
       
@@ -22,14 +25,7 @@ sets() {
       sets dirb; 
       source ./venv/bin/activate
       uvicorn main:app --port 8001 --reload ;;
-      
-    "dirb")
-      cd /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
-
-    "b+")
-      cd /Users/arturgudiev/Programming/Job/CHPOnline/
-      source venv/bin/activate
-      uvicorn main:app --port 8000 --reload ;;
+  
 
     "f+")
       cd /Users/arturgudiev/Programming/Job/frontend/CHPOnline/ ;
@@ -49,10 +45,10 @@ sets() {
       port 5173 ;;
 
     "swagger")
-      open -a "Safari" 'http://localhost:8000/docs' ;;
+      open -a "Safari" 'http://localhost:8001/docs' ;;
 
     "swaggerjson")
-      open -a "Safari" 'http://localhost:8000/openapi.json' ;;
+      open -a "Safari" 'http://localhost:8001/openapi.json' ;;
 
     "hub")
       br "https://github.com/Kush013/CHPOnline#" ;;
@@ -77,7 +73,7 @@ sets() {
       ec ""Владикавказ ;;
 
     "sql"|"db")
-      psql -U postgres -d chpo ;;
+      psql -U postgres -d sets_tracker;;
 
     "uibackc"|"uiback_cursor")
       cursor  /Users/arturgudiev/Programming/Job/frontend/CHPOnline/ /Users/arturgudiev/Programming/Job/CHPOnline/ ;;

@@ -8,9 +8,16 @@ case "$1" in
 
 	"color"|"col")
 		color=${2:-$(pbpaste)}
-		# echo "$color"
-		#remove # from first symbol 
+		
+		if [[ $color == \#* ]]; then
+			pureColor="${color:1}"
+			ec "Color(0xFF$pureColor)"
+		fi
+		;;
 
+	"colorc"|"colc")
+		color=${2:-$(pbpaste)}
+		
 		if [[ $color == \#* ]]; then
 			pureColor="${color:1}"
 			ec "const Color(0xFF$pureColor)"
@@ -18,5 +25,3 @@ case "$1" in
 		;;
 
 esac
-
-# exec zsh

@@ -22,6 +22,16 @@ tpl() {
     "pro")
 		code /Users/arturgudiev/Programming/NodeJS/templates-juggler ;;
 
+	"commit")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler
+		git add --all
+		git commit -m "Auto commit" 
+		git push ;;
+
+	"update")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler
+		git pull --rebase ;;
+
 	"psql"|"postgres"|"postgresql")
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js PostgreSQL ;;
 
@@ -37,8 +47,18 @@ tpl() {
 	"bash")
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Bash ;;
 
+	"go")
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Go ;;
+
+	# "dart")
+	# 	node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js Dart ;;
+
 	"angular")
 		tpl_run Angular ;;
+
+	*)
+		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js $1 ;;
+
 
 		
 

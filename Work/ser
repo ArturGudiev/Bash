@@ -1,0 +1,16 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/hp.sh"
+
+case "$1" in 
+	"ssh")
+		ssh root@109.73.198.32 
+	;;
+
+	"cred")
+		ec "root  ---  aUT?#1pPv*N34U " ;;
+
+	"devgo")
+		br "https://дев.жкх15.рф/login" ;;
+
+	
+esac
