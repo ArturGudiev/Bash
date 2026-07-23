@@ -3,11 +3,31 @@ source "${0:A:h}/../functions/hp.sh"
 
 case "$1" in 
 	"ssh")
-		ssh root@109.73.198.32 
+		# ssh root@109.73.198.32
+		ec "TEyPhJjN9kweKgwd"
+		ssh root@94.228.127.100 
 	;;
 
+	"ssh2")
+		sshpass -p "TEyPhJjN9kweKgwd" ssh -o StrictHostKeyChecking=no root@94.228.127.100
+	;;
+
+	"ip")
+		ec 94.228.127.100 ;; 
+
 	"cred")
-		ec "root  ---  aUT?#1pPv*N34U " ;;
+		# ec "root  ---  aUT?#1pPv*N34U " 
+		ec "root --- TEyPhJjN9kweKgwd"	
+	;;
+
+
+	"dbi")
+		ec "docker exec -it chp-dev-db bash -c 'psql -U chp -d chp' "	
+	;;
+
+	"backi")
+		ec "docker exec -it chp-dev-backend bash"	
+	;;
 
 	"devgo")
 		br "https://дев.жкх15.рф/login" ;;

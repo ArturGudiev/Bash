@@ -7,6 +7,10 @@ nav() {
   case "$1" in 
     "job")
       LOC=/Users/arturgudiev/Programming/Job/ ;;
+
+    "dir")
+      LOC=/Users/arturgudiev/Data/ ;;
+
     "down")
       LOC=~/Downloads/ ;;
     "desktop")

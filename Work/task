@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+case "$1" in 
+	"2"|"f2")
+		git checkout f24e9c4 
+		mgit l5
+		hp f+
+		;;
+
+	"1"|"f1")
+		git switch front-features
+		mgit l5
+		hp f+
+		;;
+
+	"b1")
+		cd /Users/arturgudiev/Programming/Job/CHPOnline/
+		git switch dev_test;
+		hp b+
+		;;
+
+	"b2")
+		cd /Users/arturgudiev/Programming/Job/CHPOnline/
+		git switch dev;
+		hp b+
+		;;
+esac

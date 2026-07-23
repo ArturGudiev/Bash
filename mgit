@@ -1,0 +1,22 @@
+#!/bin/zsh
+case "$1" in 
+	"log"|"l")
+		git log --oneline ;;
+
+    "l5")
+		git log --oneline -5 ;;
+
+    "cp"|"commit_puash")
+        read "?Enter commit message: " message
+        [[ -n "$message" ]] || { echo "Commit message required" >&2; exit 1; }
+        git add --all
+        git commit -m "$message"
+        git push
+        ;;
+
+    "cpa"|"commit_push_auto")
+        git add --all;
+        git commit -m "auto commit";
+        git push;
+        ;;
+esac

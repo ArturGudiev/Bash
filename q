@@ -13,7 +13,7 @@ if [[ -z "$file_path" ]]; then
 fi
 
 if [[ -n "$file_path" ]]; then
-    code "$file_path"
+    code --disable-extensions "$file_path"
 else
     echo "File '$1' not found in Scripts directory"
     exit 1

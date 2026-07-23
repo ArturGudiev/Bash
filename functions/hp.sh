@@ -7,6 +7,10 @@ hp_sql() {
 
 hp() {
   case "$1" in 
+    "api")
+      node /Users/arturgudiev/Programming/Job/chp_api/dist/index.js
+      ;;
+
     "dir")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
     

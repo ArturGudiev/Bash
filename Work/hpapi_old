@@ -1,0 +1,21 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/hp.sh"
+
+run_chp_query() {
+	psql -U postgres -d chpo -c "$1"
+}
+
+run_chp_query_quite() {
+	psql -U postgres -d chpo --no-pager -c "$1"
+}
+
+case "$1" in 
+	"run"|"")
+ 		node /Users/arturgudiev/Programming/Job/chp_api/dist/index.js 
+		;;
+	
+	"dir")
+ 		cd /Users/arturgudiev/Programming/Job/chp_api/
+		;;
+
+esac

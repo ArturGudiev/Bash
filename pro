@@ -12,8 +12,8 @@ case "$1" in
 	"mobile")
 		code /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;;
 
-	"hp2c")
-		cursor /Users/arturgudiev/Programming/Workspaces/project.code-workspace ;;
+	"hpbf"|"hpfb")
+		cursor /Users/arturgudiev/Programming/Workspaces/chp-bf.code-workspace ;;
 
 	"calc")
 		idea /home/sio/ScaleIO_Sizer/reliability-availability-service-v2/ >& /dev/null & ;;
