@@ -6,6 +6,11 @@ case "$1" in
 		ssh arturgudiev@158.160.36.7 
 	;;
 
+	"ip")
+		ec "158.160.36.7" 
+	;;
+
+
 	"cred")
 		ec "root  ---  aUT?#1pPv*N34U " ;;
 

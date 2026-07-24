@@ -6,9 +6,16 @@ DASH_DATA_DIR=/Users/arturgudiev/Programming/projects/dashboard-ui/
 
 dash() {
   case "$1" in 
-    
+
+  "syncpwd")
+    more /Users/arturgudiev/Data/.dashboard-sync/crypt-password.txt ;;
+
   "sync")
-    /Users/arturgudiev/Data/sync-dashboard.sh ;;
+    /Users/arturgudiev/Data/sync-dashboard.sh ;;    
+  
+  "syncf")
+    /Users/arturgudiev/Data/sync-dashboard.sh --force;;
+
 
     "sync-dry")
     /Users/arturgudiev/Data/sync-dashboard.sh --dry-run ;;

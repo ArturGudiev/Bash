@@ -4,7 +4,7 @@ source "${0:A:h}/../functions/hp.sh"
 case "$1" in 
 	"ssh")
 		# ssh root@109.73.198.32
-		ec "TEyPhJjN9kweKgwd"
+		# ec "TEyPhJjN9kweKgwd"
 		ssh root@94.228.127.100 
 	;;
 
