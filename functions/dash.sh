@@ -70,14 +70,14 @@ dash() {
       swag init
     ;;
 
-    "generate-2")
-      dash generate-go;
-      echo -n "'Generate backend' finished. Press [Enter] to continue..."; read
-      
-      dash swag_init;
-      echo -n "'Swag init' finished. Press [Enter] to continue..."; read
-      
-      dash generate-ui;
+  "generate-2")
+    dash generate-go;
+    echo -n "'Generate backend' finished. Press [Enter] to continue..."; read
+    
+    dash swag_init;
+    echo -n "'Swag init' finished. Press [Enter] to continue..."; read
+    
+    dash generate-ui;
     ;;
 
     "sql"|"db")

@@ -17,6 +17,14 @@ case "$1" in
 	"devgo")
 		br "https://дев.жкх15.рф/login" ;;
 
+	"cursor")
+		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev ;;
+
+	"dash"|"dashboard")
+		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev/Projects/memory-guard/ ;;
+
+	"bash"|"scripts")
+		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev/Programming/Bash/ ;;
 	
 esac
 

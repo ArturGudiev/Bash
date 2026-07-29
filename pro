@@ -8,7 +8,7 @@ case "$1" in
 	"dash2")
 		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/dashboard.code-workspace "$2" ;;
 
-	"mem")
+	"mem"|"mg")
 		openProjectAndFile /Users/arturgudiev/Programming/projects/memory-guard/ "$2" ;;
 
 	"hpmf")

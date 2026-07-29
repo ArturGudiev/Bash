@@ -134,10 +134,15 @@ hp() {
     "sql"|"db")
       psql -U postgres -d chpo ;;
 
+    "db_import_remote"|"db_from_ser")
+      ssh root@94.228.127.100 "docker exec -i chp-dev-db pg_dump -U chp -d chp" | psql -U postgres -d chpo
+      ;;
+
+
     "test1")
       hp dir;
       flutter test test/pages/login_page_test.dart;
-      ;;
+    ;;
 
      "test2")
         hp dir;
