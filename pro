@@ -1,19 +1,30 @@
 #!/bin/zsh
-case "$1" in 
+source "${0:A:h}/functions/utils.sh"
+
+case "$1" in
+	"scripts")
+		openProjectAndFile /Users/arturgudiev/Programming/Bash/Scripts/ "$2" ;;
+
 	"dash2")
-		cursor /Users/arturgudiev/Programming/Workspaces/dashboard.code-workspace ;;
+		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/dashboard.code-workspace "$2" ;;
+
+	"mem")
+		openProjectAndFile /Users/arturgudiev/Programming/projects/memory-guard/ "$2" ;;
 
 	"hpmf")
-		cursor /Users/arturgudiev/Programming/Workspaces/chp-mf.code-workspace ;;
+		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp-mf.code-workspace "$2" ;;
 
 	"tpl")
-		code /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
-	
+		openProjectAndFile /Users/arturgudiev/Programming/NodeJS/templates-juggler/ "$2" ;;
+
 	"mobile")
-		code /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;;
+		openProjectAndFile /Users/arturgudiev/Programming/Job/chp_online_mobile/ "$2" ;;
 
 	"hpbf"|"hpfb")
-		cursor /Users/arturgudiev/Programming/Workspaces/chp-bf.code-workspace ;;
+		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp-bf.code-workspace "$2" ;;
+
+	"hpmb"|"hpbm")
+		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp_mb.code-workspace "$2" ;;
 
 	"calc")
 		idea /home/sio/ScaleIO_Sizer/reliability-availability-service-v2/ >& /dev/null & ;;
@@ -29,5 +40,3 @@ case "$1" in
 
 esac
 exec zsh
-
-

@@ -37,6 +37,15 @@ hpapi() {
     "ross"|"admin-rosseti")
       _hpapi_login admin-rosseti
       ;;
+    "gaza"|"admin-gazprom")
+      _hpapi_login admin-gazprom
+      ;;
+    "gupa"|"admin-gup")
+      _hpapi_login admin-gup
+      ;;
+    "my-user"|"myuser"|"me-user")
+      _hpapi_login my-user
+      ;;
     "plat"|"admin-platform")
       _hpapi_login admin-platform
       ;;
@@ -51,11 +60,11 @@ hpapi() {
       ;;
 
     # One-shot: hpapi incident <id> [login]
-    # e.g. hpapi incident 42 isca
+    # e.g. hpapi incident 42 gaza
     "incident"|"incident-by-id")
       if [[ -z "$2" ]]; then
         echo "Usage: hpapi incident <incident_id> [login]"
-        echo "  e.g. hpapi incident 42 isca"
+        echo "  e.g. hpapi incident 42 gaza"
         return 1
       fi
       local incident_id="$2"
@@ -63,7 +72,8 @@ hpapi() {
       _hpapi_run --incident-by-id "$incident_id" --login "$login_id"
       ;;
 
-    "me")
+    # One-shot GET /users/me
+    "me"|"whoami"|"profile")
       local login_id="${2:-isca}"
       _hpapi_run --me --login "$login_id"
       ;;
@@ -99,17 +109,21 @@ hpapi — CHP API CLI helpers
 One-shot methods (login → call → print → quit):
   hpapi incident <id> [login]    GET incident by id  (default login: isca)
   hpapi me [login]               GET /users/me       (default login: isca)
+  hpapi whoami [login]           same as hpapi me
 
-  e.g. hpapi incident 42 isca
-       hpapi me mina
+  e.g. hpapi incident 9796 gaza
+       hpapi me my-user
 
-Predefined shortcuts:
+Predefined shortcuts (interactive menu, logged in):
   mina / admin-minzhkh     Админ МинЖКХ
   minh / head-minzhkh      Руководитель МинЖКХ
   mino / op-minzhkh        Оператор МинЖКХ
   isca / admin-isc         Админ ИСЦ
   isco / op-isc            Оператор ИСЦ
   ross / admin-rosseti     Админ Россети
+  gaza / admin-gazprom     Админ Газпром
+  gupa / admin-gup         Админ ГУП
+  my-user / me-user        Personal user (79280726859)
   plat / admin-platform    Admin (platform)
 EOF
       ;;

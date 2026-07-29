@@ -7,6 +7,12 @@ hp_sql() {
 
 hp() {
   case "$1" in 
+    "alembic"|"al")
+      hp dirb;
+      source venv/bin/activate;
+      alembic upgrade head
+      ;;
+
     "api")
       node /Users/arturgudiev/Programming/Job/chp_api/dist/index.js
       ;;

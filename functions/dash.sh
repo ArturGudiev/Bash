@@ -14,7 +14,7 @@ dash() {
     /Users/arturgudiev/Data/sync-dashboard.sh ;;    
   
   "syncf")
-    /Users/arturgudiev/Data/sync-dashboard.sh --force;;
+    /Users/arturgudiev/Data/sync-dashboard.sh --force ;;
 
 
     "sync-dry")

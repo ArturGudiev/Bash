@@ -1,5 +1,8 @@
 #!/bin/zsh
 case "$1" in 
+	"cit"|"citizen")
+		ec "79280726859" ;;
+	
 	"gaza")
 		ec "70000000003" ;;
 

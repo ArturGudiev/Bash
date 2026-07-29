@@ -3,12 +3,12 @@
 echo $#
 if [[ "$1" == "-d" ]]; then
     printInCenter $(pwd)
-    ls -lG -d */
+    ls -laG -d */
 elif (( $# > 0 )); then
-    ls -lG $1
+    ls -laG $1
 else
     printInCenter $(pwd)
-    ls -lG
+    ls -laG
 fi
 echo ""
 # exec zsh

@@ -9,6 +9,7 @@ source "$FUNCTIONS_DIR/hp.sh" # CHp Mobile
 source "$FUNCTIONS_DIR/hpapi.sh" # CHp API
 source "$FUNCTIONS_DIR/cao.sh" # CAO FastAPI
 source "$FUNCTIONS_DIR/dash.sh" # CHp Mobile 
+source "$FUNCTIONS_DIR/mem.sh" # Memory Guard
 source "$FUNCTIONS_DIR/tpl.sh" # CHp Mobile 
 source "$FUNCTIONS_DIR/nav.sh"
 source "$FUNCTIONS_DIR/sets.sh"
