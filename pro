@@ -5,6 +5,9 @@ case "$1" in
 	"scripts")
 		openProjectAndFile /Users/arturgudiev/Programming/Bash/Scripts/ "$2" ;;
 
+	"zali"|"pro")
+		openProjectAndFile /Users/arturgudiev/Programming/projects/dargavs-landing-page/ "$2" ;;
+
 	"dash2")
 		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/dashboard.code-workspace "$2" ;;
 
@@ -38,5 +41,7 @@ case "$1" in
 	"manager"|"sizing-process-manager")
 		idea /home/sio/ScaleIO_Sizer/sizing-process-manager/ >& /dev/null & ;;
 
+	"polka")
+	openProjectAndFile /Users/arturgudiev/Programming/Job/Polka/ "$2" ;;
 esac
 exec zsh

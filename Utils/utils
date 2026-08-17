@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+case "$1" in
+	"color")
+    cd /Users/arturgudiev/Programming/Python/utils-ag/;
+    source venv/bin/activate
+    utils-ag-color --color $2
+  ;;
+esac
+exec zsh

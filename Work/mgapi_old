@@ -1,0 +1,20 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/mgapi.sh"
+
+case "$1" in
+  "run"|"")
+    mgapi api
+    ;;
+
+  "dir")
+    mgapi dir
+    ;;
+
+  "admin")
+    mgapi admin
+    ;;
+
+  *)
+    mgapi "$@"
+    ;;
+esac

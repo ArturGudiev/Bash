@@ -3,13 +3,10 @@ source "${0:A:h}/../functions/hp.sh"
 
 case "$1" in 
 	"ssh")
-		ssh arturgudiev@158.160.36.7 
-	;;
+		ssh arturgudiev@158.160.36.7 ;;
 
 	"ip")
-		ec "158.160.36.7" 
-	;;
-
+		ec "158.160.36.7" ;;
 
 	"cred")
 		ec "root  ---  aUT?#1pPv*N34U " ;;
@@ -25,6 +22,20 @@ case "$1" in
 
 	"bash"|"scripts")
 		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev/Programming/Bash/ ;;
+	
+
+	"rc"|"remote_command")
+		ssh -t arturgudiev@158.160.36.7 "bash -l -c '$2'"
+		;;
+
+	"ru"|"remote_update")
+		yavm rc "da ubf"
+		;;
+
+	"cptemp"|"copy_to_temp")
+		scp $2 arturgudiev@158.160.36.7:/tmp
+		;;
+	
 	
 esac
 

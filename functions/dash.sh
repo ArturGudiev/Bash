@@ -7,6 +7,30 @@ DASH_DATA_DIR=/Users/arturgudiev/Programming/projects/dashboard-ui/
 dash() {
   case "$1" in 
 
+  "cp"|"commit_push")
+    dash dirf; 
+    mgit cp; 
+    dash dirb;
+    mgit cp;
+    
+  ;;
+
+  "cpr") 
+    # commit and push frontend and backend from local; update remote 
+    dash dirf; 
+    mgit cp; 
+    dash dirb;
+    mgit cp;
+    yavm rc "da ubf"
+  ;;
+
+
+  "update_remote") 
+    yavm rc "da ubf"
+  ;;
+
+
+
   "syncpwd")
     more /Users/arturgudiev/Data/.dashboard-sync/crypt-password.txt ;;
 
@@ -16,59 +40,58 @@ dash() {
   "syncf")
     /Users/arturgudiev/Data/sync-dashboard.sh --force ;;
 
+  "sync-dry")
+  /Users/arturgudiev/Data/sync-dashboard.sh --dry-run ;;
 
-    "sync-dry")
-    /Users/arturgudiev/Data/sync-dashboard.sh --dry-run ;;
+  "data")
+    cd /Users/arturgudiev/Data/dashboard_files ;;
 
-    "data")
-      cd /Users/arturgudiev/Data/dashboard_files ;;
+  "dirb")
+    cd $DASH_BACKEND_DIR ;;
 
-    "dirb")
-      cd $DASH_BACKEND_DIR ;;
+  "dirf")
+    cd $DASH_FRONTEND_DIR ;;
+    
+  "swagger")
+    br http://localhost:8080/swagger/index.html ;;
+    
+  "go")
+    port 4200 ;;
 
-    "dirf")
-      cd $DASH_FRONTEND_DIR ;;
-      
-    "swagger")
-      br http://localhost:8080/swagger/index.html ;;
-      
-    "go")
-      port 4200 ;;
+  "swagger_build"|"swagb"|"swag_init")
+    dash dirb; 
+    swag init
+  ;;
 
-    "swagger_build"|"swagb"|"swag_init")
-      dash dirb; 
-      swag init
+  "b+"|"s+")
+    cd $DASH_BACKEND_DIR
+    go run . 
     ;;
 
-    "b+"|"s+")
-      cd $DASH_BACKEND_DIR
-      go run . 
-      ;;
+  "f+"|"ui+")
+    dash dirf
+    npm start ;;
 
-    "f+"|"ui+")
-      dash dirf
-      npm start ;;
+  "generate_types"|"generate-ui")
+    cd /Users/arturgudiev/Programming/projects/dashboard-ui/src/app/types/;
+    rm -rf ./generated;
+    npx @hey-api/openapi-ts -i /Users/arturgudiev/Programming/projects/dashboard-go/docs/swagger.json -o ./generated
+  ;;
 
-    "generate_types"|"generate-ui")
-      cd /Users/arturgudiev/Programming/projects/dashboard-ui/src/app/types/;
-      rm -rf ./generated;
-      npx @hey-api/openapi-ts -i /Users/arturgudiev/Programming/projects/dashboard-go/docs/swagger.json -o ./generated
-    ;;
+  "go-generate"|"generate-go")
+    cd /Users/arturgudiev/Programming/projects/dashboard-go/ent/
+    go generate .
+  ;;
 
-    "go-generate"|"generate-go")
-      cd /Users/arturgudiev/Programming/projects/dashboard-go/ent/
-      go generate .
-    ;;
+  "wire")
+    cd /Users/arturgudiev/Programming/projects/dashboard-go/app/
+    wire
+  ;;
 
-    "wire")
-      cd /Users/arturgudiev/Programming/projects/dashboard-go/app/
-      wire
-    ;;
-
-    "swag_init")
-      cd /Users/arturgudiev/Programming/projects/dashboard-go/
-      swag init
-    ;;
+  "swag_init")
+    cd /Users/arturgudiev/Programming/projects/dashboard-go/
+    swag init
+  ;;
 
   "generate-2")
     dash generate-go;
@@ -80,8 +103,8 @@ dash() {
     dash generate-ui;
     ;;
 
-    "sql"|"db")
-      psql -U postgres -d dashboard ;;
+  "sql"|"db")
+    psql -U postgres -d dashboard ;;
 
   esac
 }

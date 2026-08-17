@@ -131,6 +131,13 @@ hp() {
     "move_to_icons"|"move_icons"|"move_icon")
       mv $2 /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons ;;
 
+    "move_iconf")
+      mv $2 /Users/arturgudiev/Programming/Job/frontend/CHPOnline/src/assets/img/icons/ 
+      ;;
+
+      
+
+
     "sql"|"db")
       psql -U postgres -d chpo ;;
 
@@ -177,6 +184,10 @@ hp() {
       dart run build_runner clean;
       echo -n "Press [Enter] to continue..."; read
       dart run build_runner build --delete-conflicting-outputs
+    ;;
+
+    "icons_dir"|"iconsf") 
+      cd /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons/;
     ;;
 
     "sqlfc2"|"psqlfc2")

@@ -1,2 +1,23 @@
 #!/bin/zsh
-br "localhost:$1"
+
+# Initialize a tracker variable as false
+flag_provided=false
+
+# Loop through arguments. Add a colon (:) after letters that need arguments (e.g., "f:")
+while getopts "v" opt; do
+  case eval in
+    v)
+      flag_provided=true
+      ;;
+    *)
+      echo "Invalid option"
+      exit 1
+      ;;
+  esac
+done
+
+if [ "$flag_provided" = true ]; then
+  chrome "localhost:$1"
+else
+  br "localhost:$1"
+fi

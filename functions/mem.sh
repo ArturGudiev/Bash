@@ -6,7 +6,6 @@ MG_DIR=/Users/arturgudiev/Programming/projects/memory-guard
 
 mem() {
   case "$1" in 
-
     "dirb")
       cd $MG_BACKEND_DIR ;;
 
@@ -23,6 +22,13 @@ mem() {
     "dirf")
       cd $MG_FRONTEND_DIR ;;
 
+    "swagger")
+      br http://localhost:3033/swagger/index.html ;;
+
+      "swagger2")
+      br http://158.160.36.7:3033/swagger/index.html# ;;
+
+
     "dir")
       cd $MG_DIR ;;
 
@@ -32,6 +38,15 @@ mem() {
     "go")
       port 5173 ;;
 
+    "go2")
+      br https://memoryguard.ru ;;
+
+
+    "monitor")
+      br https://dashboard.uptimerobot.com/monitors ;;
+
+    "bot")
+      br https://mg-bot-7d16.onrender.com/health;;
 
   esac
 }
