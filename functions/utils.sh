@@ -19,7 +19,7 @@ openProjectAndFile() {
     fi
 
     if [[ -z "$namePart" ]]; then
-        cursor "$projectPath"
+        cursor -n --classic "$projectPath"
         return
     fi
 
@@ -56,5 +56,5 @@ openProjectAndFile() {
         return 1
     fi
 
-    cursor "$projectPath" "$filePath"
+    cursor -n --classic "$projectPath" "$filePath"
 }

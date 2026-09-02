@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+name=$1
+if [[ -z "$name" ]]; then
+	echo -n "Process name: "
+	read name
+fi
+
+if [[ -z "$name" ]]; then
+	echo "No process name provided" >&2
+	exit 1
+fi
+
+pgrep -fli "$name"

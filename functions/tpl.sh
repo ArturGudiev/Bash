@@ -13,14 +13,25 @@ tpl() {
 	"dir")
 		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
 
-	"cp"|"cpa")
+	"cp")
 		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
 		mgit cp;	
 	;;
 
+	"cpa"|"u")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
+		mgit cpa;	
+	;;
+
+	"cpc")
+		mgit cpa;
+		tsc;
+	;;
+
 	"compile"|"tsc")
 		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;
-		tsc ;;
+		tsc
+	;;
 
   	"pro")
 		code /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
@@ -40,6 +51,10 @@ tpl() {
 	"update")
 		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler
 		git pull --rebase ;;
+
+	"update_local"|"ul")
+		git  ;;
+
 
 	"psql"|"postgres"|"postgresql")
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node PostgreSQL ;;

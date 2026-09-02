@@ -29,8 +29,6 @@ dash() {
     yavm rc "da ubf"
   ;;
 
-
-
   "syncpwd")
     more /Users/arturgudiev/Data/.dashboard-sync/crypt-password.txt ;;
 

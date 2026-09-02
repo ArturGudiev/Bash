@@ -1,0 +1,3 @@
+#!/bin/zsh
+mcd /Users/arturgudiev/Programming/Bash/Scripts/Aliases
+exec zsh

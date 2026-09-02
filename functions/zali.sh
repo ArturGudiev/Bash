@@ -24,5 +24,10 @@ zali() {
     npm run dev 
     ;;
 
+  "move_image")
+      mv $2 /Users/arturgudiev/Programming/projects/dargavs-landing-page/public/images  
+      ;;
+
+
   esac
 }
