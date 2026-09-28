@@ -13,6 +13,10 @@ nav() {
 
     "down")
       LOC=~/Downloads/ ;;
+
+    "proj")
+      LOC=~/Users/arturgudiev/Programming/projects/ ;;
+    
     "desktop")
       LOC=~/Desktop/ ;;
     

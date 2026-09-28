@@ -19,4 +19,10 @@ case "$1" in
         git commit -m "auto commit";
         git push;
         ;;
+
+      "bi"|"branch_interactive")
+        local branch
+        branch=$(git branch --all | grep -v HEAD | sed 's/^ *//' | sed 's#^remotes/origin/##' | sort -u | fzf --height 40% --reverse)
+        [ -n "$branch" ] && git checkout "$branch"
+
 esac

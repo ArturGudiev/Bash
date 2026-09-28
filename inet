@@ -5,7 +5,9 @@ declare -A URLs=(
 ["src"]="/home/donny/Sizer" 
 ["70"]="http://localhost:7070" 
 ["50"]="http://localhost:5050" 
+["re"]="https://context.reverso.net/перевод/" 
 ["woof"]="dog")
 
 
-ch ${URLs[$1]}
+
+br ${URLs[$1]}

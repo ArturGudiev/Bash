@@ -18,12 +18,18 @@ tpl() {
 		mgit cp;	
 	;;
 
-	"cpa"|"u")
+	"refresh"|"r")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
+		mgit cpa;
+		tsc;	
+	;;
+
+	"cpa")
 		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
 		mgit cpa;	
 	;;
 
-	"cpc")
+	"cpc"|"u")
 		mgit cpa;
 		tsc;
 	;;
@@ -77,8 +83,14 @@ tpl() {
 	"angular")
 		tpl_run Angular ;;
 
+	"angular")
+		tpl_run Angular ;;
+
+
 	*)
 		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js $1 ;;
+
+
 
   esac
 }

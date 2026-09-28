@@ -1,4 +1,4 @@
-#!/bin/zsh
+ #!/bin/zsh
 # HP2 - Work-related navigation and commands for HP project
 
 hp_sql() {
@@ -99,6 +99,9 @@ hp() {
     "hub2")
       br "https://github.com/Kush013/chp_online_mobile" ;;
 
+    "emulator")
+      hp dir; flutter run --release -d 00008030-000268DE0C63802E ;;
+
     "iphone" | "iphone_release")
       hp dir; flutter run --release -d 00008030-000268DE0C63802E ;;
 
@@ -134,9 +137,6 @@ hp() {
     "move_iconf")
       mv $2 /Users/arturgudiev/Programming/Job/frontend/CHPOnline/src/assets/img/icons/ 
       ;;
-
-      
-
 
     "sql"|"db")
       psql -U postgres -d chpo ;;
@@ -186,9 +186,12 @@ hp() {
       dart run build_runner build --delete-conflicting-outputs
     ;;
 
-    "icons_dir"|"iconsf") 
+    "icons_dir"|"iconsf"|"icons") 
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons/;
     ;;
+
+    # "delete-db"|"del-db")
+    #   psql -U postgres -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'chpo' AND pid <> pg_backend_pid(); DROP DATABASE chpo";
 
     "sqlfc2"|"psqlfc2")
       if [[ -n "$2" ]]; then

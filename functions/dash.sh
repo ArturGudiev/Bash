@@ -104,5 +104,15 @@ dash() {
   "sql"|"db")
     psql -U postgres -d dashboard ;;
 
+
+  "remotecli"|"remote-root"|"rr ")
+    dash dirb;
+    go run . cli --remote ssh://arturgudiev@158.160.36.7 --alias root ;;
+
+  "root")
+    dash dirb;
+    go run . cli --alias root ;;
+
+
   esac
 }

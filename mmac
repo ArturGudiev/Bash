@@ -1,0 +1,6 @@
+#!/bin/zsh
+case "$1" in 
+	"restart")
+		osascript -e 'tell app "System Events" to restart' ;;
+
+esac

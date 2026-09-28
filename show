@@ -1,0 +1,14 @@
+#!/bin/zsh
+source "${0:A:h}/../functions/hp.sh"
+
+case "$1" in 
+	"cursorhk")
+    my_var='Это строка 1
+        Это строка 2
+        Это строка 3'
+    printInCenter $(pwd)
+    ;;
+	
+	
+esac
+
