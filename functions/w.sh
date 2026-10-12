@@ -10,6 +10,7 @@ w() {
 
 wr() {
   dash dirb;
-  go run . cli --remote ssh://arturgudiev@158.160.36.7 --alias $1;
+  # echo "go run . cli --remote "ssh://arturgudiev@$YIP" --alias $1;"
+  go run . cli --remote "ssh://arturgudiev@$YIP" --alias $1;
 }
 

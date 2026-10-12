@@ -107,11 +107,15 @@ dash() {
 
   "remotecli"|"remote-root"|"rr ")
     dash dirb;
-    go run . cli --remote ssh://arturgudiev@158.160.36.7 --alias root ;;
+    go run . cli --remote "ssh://arturgudiev@$YIP" --alias root ;;
+    
 
   "root")
     dash dirb;
     go run . cli --alias root ;;
+
+  "test")
+    echo "$YIP" ;;
 
 
   esac

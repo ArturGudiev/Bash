@@ -26,7 +26,7 @@ mem() {
       br http://localhost:3033/swagger/index.html ;;
 
       "swagger2")
-      br http://158.160.36.7:3033/swagger/index.html# ;;
+      br "http://$YIP:3033/swagger/index.html#" ;;
 
 
     "dir")

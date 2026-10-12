@@ -1,12 +1,13 @@
 #!/bin/zsh
 source "${0:A:h}/../functions/hp.sh"
 
+
 case "$1" in 
 	"ssh")
-		ssh arturgudiev@158.160.36.7 ;;
+		ssh "arturgudiev@$YIP" ;;
 
 	"ip")
-		ec "158.160.36.7" ;;
+		ec "$YIP" ;;
 
 	"cred")
 		ec "root  ---  aUT?#1pPv*N34U " ;;
@@ -15,17 +16,17 @@ case "$1" in
 		br "https://дев.жкх15.рф/login" ;;
 
 	"cursor")
-		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev ;;
+		cursor --remote "ssh-remote+arturgudiev@$YIP"  /home/arturgudiev ;;
 
 	"dash"|"dashboard")
-		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev/Projects/memory-guard/ ;;
+		cursor --remote "ssh-remote+arturgudiev@$YIP"  /home/arturgudiev/Projects/memory-guard/ ;;
 
 	"bash"|"scripts")
-		cursor --remote ssh-remote+arturgudiev@158.160.36.7  /home/arturgudiev/Programming/Bash/ ;;
+		cursor --remote "ssh-remote+arturgudiev@$YIP"  /home/arturgudiev/Programming/Bash/ ;;
 	
 
 	"rc"|"remote_command")
-		ssh -t arturgudiev@158.160.36.7 "bash -l -c '$2'"
+		ssh -t "arturgudiev@$YIP" "bash -l -c '$2'"
 		;;
 
 	"ru"|"remote_update")
@@ -33,9 +34,7 @@ case "$1" in
 		;;
 
 	"cptemp"|"copy_to_temp")
-		scp $2 arturgudiev@158.160.36.7:/tmp
+		scp $2 "arturgudiev@$YIP":/tmp
 		;;
-	
-	
 esac
 

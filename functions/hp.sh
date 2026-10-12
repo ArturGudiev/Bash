@@ -5,6 +5,8 @@ hp_sql() {
     psql -U postgres -d chpo -c "$1"; 
 }
 
+react_dir="/Users/arturgudiev/Programming/Job/ch_r/"
+
 hp() {
   case "$1" in 
     "alembic"|"al")
@@ -17,8 +19,16 @@ hp() {
       node /Users/arturgudiev/Programming/Job/chp_api/dist/index.js
       ;;
 
+    "r_dir"|"dirr")
+      cd /Users/arturgudiev/Programming/Job/ch_r/ ;;
+
     "dir")
-      cd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
+      cd "$react_dir" ;;
+    
+    "mtest")
+      hp mdir;
+      flutter test;
+      ;;
     
     "dirb")
       cd /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
@@ -151,9 +161,10 @@ hp() {
       flutter test test/pages/login_page_test.dart;
     ;;
 
-     "test2")
-        hp dir;
-        flutter test test/pages/main_page_test.dart;
+    "test2")
+      # hp dir;
+      # ./scripts/test.sh;
+      /Users/arturgudiev/Programming/Job/chp_online_mobile/scripts/test.sh;    
     ;;
 
     "uibackc"|"uiback_cursor")
@@ -201,6 +212,11 @@ hp() {
       fi
       [[ -n "$expression" ]] || { echo "hp sqlfc: expression required" >&2; return 1; }
       psql -U postgres -d chpo -c "SELECT $expression" ;;
+
+
+    "test_watch_group"|"test_watch"|"test_watch_group" | "tw")
+      hp dir;
+      ./scripts/test.sh --watch-group $2 ;;
 
     *)
       echo "hp: unknown command '$1'" >&2

@@ -30,6 +30,7 @@ tpl() {
 	;;
 
 	"cpc"|"u")
+		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/;
 		mgit cpa;
 		tsc;
 	;;

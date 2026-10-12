@@ -15,6 +15,16 @@ case "$1" in
 		fi
 		;;
 
+	"emu-list"|"el")
+	 	# ~/Library/Android/sdk/emulator/emulator -list-avds ;;
+		flutter emulators ;; 
+
+	"aes"|"android-emulators")
+	 	~/Library/Android/sdk/emulator/emulator -list-avds ;;
+
+	"ae")
+	 ~/Library/Android/sdk/emulator/emulator -avd $2 > /dev/null 2>&1 & ;;
+
 	"colorc"|"colc")
 		color=${2:-$(pbpaste)}
 		

@@ -3,4 +3,7 @@
 case "$1" in 
 	"applist")
 		wmctrl -l ;;
+
+	"e2")
+		ec "ё" ;;
 esac

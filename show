@@ -3,10 +3,14 @@ source "${0:A:h}/../functions/hp.sh"
 
 case "$1" in 
 	"cursorhk")
-    my_var='Это строка 1
-        Это строка 2
-        Это строка 3'
-    printInCenter $(pwd)
+    my_var='
+  1. [ID: 171] Expand Selection	 --- 	Contol - Shift - Right
+  2. [ID: 172] Comment selection (not whole line)	 --- 	Shift - Option - A
+  3. [ID: 173] Go to opening bracket (staying on closing bracket)	 --- 	Shift - Command - \
+  4. [ID: 174] Go Back	 --- 	Cntrl - "-"
+        
+        '
+    echo "$my_var"
     ;;
 	
 	
