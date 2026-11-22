@@ -31,10 +31,16 @@ case "$1" in
 		ec "root  ---  aUT?#1pPv*N34U " ;;
 	
 	"prodisca")
-		ec "70000000007  ---  dgXM28B0" ;;
+		ec "70000000007"
+		echo -n "Press [Enter] for password..."
+		read
+		ec "dgXM28B0" ;;
 
 	"progupo"|"tebloev")
-		ec "79188293780  ---  9Y2VyQ2N" ;;
+		ec "79188293780"
+		echo -n "Press [Enter] for password..."
+		read
+		ec "9Y2VyQ2N" ;;
 
 esac
 

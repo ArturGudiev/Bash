@@ -23,6 +23,7 @@ case "$1" in
 	 	~/Library/Android/sdk/emulator/emulator -list-avds ;;
 
 	"ae")
+	
 	 ~/Library/Android/sdk/emulator/emulator -avd $2 > /dev/null 2>&1 & ;;
 
 	"colorc"|"colc")

@@ -1,3 +1,4 @@
 #!/bin/zsh
-mcd /Users/arturgudiev/Programming/Bash/Scripts/Aliases
+cd /Users/arturgudiev/Programming/Bash/Scripts/Aliases
+l
 exec zsh

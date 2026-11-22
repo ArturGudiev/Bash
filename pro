@@ -26,6 +26,9 @@ case "$1" in
 	"hpbf"|"hpfb")
 		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp-bf.code-workspace "$2" ;;
 
+	"hp3"|"hpbfm")
+		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp-bfm.code-workspace "$2" ;;
+
 	"hpmb"|"hpbm")
 		openProjectAndFile /Users/arturgudiev/Programming/Workspaces/chp_mb.code-workspace "$2" ;;
 
@@ -42,6 +45,12 @@ case "$1" in
 		idea /home/sio/ScaleIO_Sizer/sizing-process-manager/ >& /dev/null & ;;
 
 	"polka")
-	openProjectAndFile /Users/arturgudiev/Programming/Job/Polka/ "$2" ;;
+		openProjectAndFile /Users/arturgudiev/Programming/Job/Polka/ "$2" ;;
+
+	"led"|"ledger")
+		openProjectAndFile /Users/arturgudiev/Programming/Java/ledger/ "$2" ;;
+
+	"jment"|"mentorship"|"ment")
+		openProjectAndFile /Users/arturgudiev/Programming/Java/Mentorship/ "$2" ;;
 esac
 exec zsh

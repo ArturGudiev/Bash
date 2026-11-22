@@ -59,8 +59,6 @@ hpapi() {
       _hpapi_login "$2"
       ;;
 
-    # One-shot: hpapi incident <id> [login]
-    # e.g. hpapi incident 42 gaza
     "incident"|"incident-by-id")
       if [[ -z "$2" ]]; then
         echo "Usage: hpapi incident <incident_id> [login]"

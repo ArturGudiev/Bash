@@ -1,2 +1,4 @@
 #!/bin/zsh
-mcd /Users/arturgudiev/Programming/Bash/Scripts
+cd /Users/arturgudiev/Programming/Bash/Scripts
+l
+exec zsh

@@ -1,11 +1,11 @@
 #!/bin/zsh
-case "$1" in 
+case "$1" in
 	"")
-		mcd ~/Programming ;;
-	
+		cd ~/Programming ;;
+
 	"sh")
-		mcd ~/Programming/Bash ;;
+		cd ~/Programming/Bash ;;
 
 esac
 l
-# exec zsh
+exec zsh

@@ -41,7 +41,7 @@ if [[ -z "$file_path" ]]; then
 fi
 
 if $use_cursor; then
-    cursor "$file_path" --clasic
+    cursor -n --classic "$file_path"
 else
     code --disable-extensions "$file_path"
 fi

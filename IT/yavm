@@ -9,6 +9,9 @@ case "$1" in
 	"ip")
 		ec "$YIP" ;;
 
+	"cloud")
+		br https://console.yandex.cloud/folders/b1g2mmgocoekt5g63ngj/dashboard ;;
+
 	"cred")
 		ec "root  ---  aUT?#1pPv*N34U " ;;
 

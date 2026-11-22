@@ -2,6 +2,9 @@
 
 andy() {
   case "$1" in 
+    "hub")
+      br "https://github.com/ArturGudiev/go-hw" ;;
+      
     "pl")
       br 'https://www.youtube.com/watch?v=eQPfHdiz_KI&list=PLc2Vkg57qmuRNHp6NNvYRVgg3OP-b5E_v' ;;
 

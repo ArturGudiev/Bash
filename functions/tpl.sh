@@ -1,98 +1,101 @@
 #!/bin/zsh
 # HP2 - Work-related navigation and commands for HP project
 
+TPL_APP="/Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js"
+TPL_DIR="/Users/arturgudiev/Programming/NodeJS/templates-juggler"
+
+# Launch by template-node name/alias
 tpl_run() {
-    node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node $1 
+    node "$TPL_APP" --templates-node "$1"
+}
+
+# Launch by template alias (not node)
+tpl_template() {
+    node "$TPL_APP" -t "$1"
 }
 
 tpl() {
-  case "$1" in 
+  case "$1" in
 	"")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js ;;
+		node "$TPL_APP" ;;
 
 	"dir")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
+		cd "$TPL_DIR"/ ;;
 
 	"cp")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
-		mgit cp;	
+		cd "$TPL_DIR"/
+		mgit cp
 	;;
 
 	"refresh"|"r")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
-		mgit cpa;
-		tsc;	
-	;;
-
-	"cpa")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/
-		mgit cpa;	
-	;;
-
-	"cpc"|"u")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/;
-		mgit cpa;
-		tsc;
-	;;
-
-	"compile"|"tsc")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;
+		cd "$TPL_DIR"/
+		mgit cpa
 		tsc
 	;;
 
-  	"pro")
-		code /Users/arturgudiev/Programming/NodeJS/templates-juggler/ ;;
-	
-	"b"|"bootstrap")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node Bootstrap ;;
+	"cpa")
+		cd "$TPL_DIR"/
+		mgit cpa
+	;;
 
-    "pro")
-		code /Users/arturgudiev/Programming/NodeJS/templates-juggler ;;
+	"cpc"|"u")
+		cd "$TPL_DIR"/
+		mgit cpa
+		tsc
+	;;
+
+	"compile"|"tsc")
+		cd "$TPL_DIR"/
+		tsc
+	;;
+
+	"pro")
+		code "$TPL_DIR" ;;
+
+	"b"|"bootstrap")
+		tpl_run Bootstrap ;;
 
 	"commit")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler
+		cd "$TPL_DIR"
 		git add --all
-		git commit -m "Auto commit" 
+		git commit -m "Auto commit"
 		git push ;;
 
 	"update")
-		cd /Users/arturgudiev/Programming/NodeJS/templates-juggler
+		cd "$TPL_DIR"
 		git pull --rebase ;;
 
 	"update_local"|"ul")
-		git  ;;
-
+		git
+	;;
 
 	"psql"|"postgres"|"postgresql")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node PostgreSQL ;;
+		tpl_run PostgreSQL ;;
 
 	"git")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node Git ;;
+		tpl_run Git ;;
 
 	"flutter")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node Flutter ;;
-	
+		tpl_run Flutter ;;
+
 	"chp")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node CHP ;;
+		tpl_run CHP ;;
 
 	"bash")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node Bash ;;
+		tpl_run Bash ;;
 
 	"go")
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js --templates-node Go ;;
+		tpl_run Go ;;
 
 	"angular")
 		tpl_run Angular ;;
 
-	"angular")
-		tpl_run Angular ;;
+	"t"|"template")
+		tpl_template "$2" ;;
 
-
+	# Unknown args are treated as template aliases (use named cases / tpl_run for nodes)
 	*)
-		node /Users/arturgudiev/Programming/NodeJS/templates-juggler/dist/index.js $1 ;;
-
-
-
+		tpl_template "$1" ;;
   esac
 }
 

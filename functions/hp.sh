@@ -14,7 +14,7 @@ hp() {
       source venv/bin/activate;
       alembic upgrade head
       ;;
-
+      
     "api")
       node /Users/arturgudiev/Programming/Job/chp_api/dist/index.js
       ;;
@@ -23,7 +23,7 @@ hp() {
       cd /Users/arturgudiev/Programming/Job/ch_r/ ;;
 
     "dir")
-      cd "$react_dir" ;;
+      cd "/Users/arturgudiev/Programming/Job/chp_online_mobile/" ;;
     
     "mtest")
       hp mdir;
@@ -63,13 +63,23 @@ hp() {
       hp dir;
       flutter run -d EA7FE8FA-DC4C-416A-BA6E-174311E43CC2 ;;
 
-    "android+"|"android_build"|"abuild"|"a_build")
+    "android+"|"android_build"|"abuild"|"a_build"|"apk+")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;
       flutter build apk ;;
 
     "android_dir"|"a_dir")
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk/ ;
       ;;
+
+    "aab+")
+      cd /Users/arturgudiev/Programming/Job/chp_online_mobile/ ;
+      flutter build appbundle --release
+    ;; 
+
+    "aab_dir")
+      cd /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/bundle/release/ ;
+    ;;
+
 
     "copy_android"|"cp_android")
       cp /Users/arturgudiev/Programming/Job/chp_online_mobile/build/app/outputs/flutter-apk/app-release.apk $2 ;;
@@ -120,7 +130,8 @@ hp() {
 
 
     "figma")
-      open -a "Safari" 'https://www.figma.com/design/Z5XpqNHhROerYLdU2UIVjb/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D0%B5%D1%80%D1%81%D1%82%D0%B2%D0%BE-%D0%96%D0%9A%D0%A5-%D0%A0%D0%A1%D0%9E-%D0%90%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F?node-id=0-1&p=f&t=FSkoxucwgnAUb1XB-0' ;;
+      # open -a "Safari" 'https://www.figma.com/design/Z5XpqNHhROerYLdU2UIVjb/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D0%B5%D1%80%D1%81%D1%82%D0%B2%D0%BE-%D0%96%D0%9A%D0%A5-%D0%A0%D0%A1%D0%9E-%D0%90%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F?node-id=0-1&p=f&t=FSkoxucwgnAUb1XB-0' ;;
+      open -a "Safari" 'https://www.figma.com/design/Z5XpqNHhROerYLdU2UIVjb/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D0%B5%D1%80%D1%81%D1%82%D0%B2%D0%BE-%D0%96%D0%9A%D0%A5-%D0%A0%D0%A1%D0%9E-%D0%90%D0%BB%D0%B0%D0%BD%D0%B8%D1%8F?node-id=34-17' ;;
 
     "pro")
       code "/Users/arturgudiev/Programming/Job/chp_online_mobile" ;;
@@ -199,6 +210,10 @@ hp() {
 
     "icons_dir"|"iconsf"|"icons") 
       cd /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons/;
+    ;;
+
+    "icons2") 
+      open /Users/arturgudiev/Programming/Job/chp_online_mobile/assets/images/icons/;
     ;;
 
     # "delete-db"|"del-db")

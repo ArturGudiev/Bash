@@ -1,10 +1,10 @@
 #!/bin/zsh
 case "$1" in 
 	"dir")
-		mcd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
+		cd /Users/arturgudiev/Programming/Job/chp_online_mobile ;;
 	
 	"dirb")
-		mcd /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
+		cd /Users/arturgudiev/Programming/Job/CHPOnline/ ;;
 
 ````	"b+")
 		cd /Users/arturgudiev/Programming/Job/CHPOnline/
